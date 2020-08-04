@@ -1,0 +1,68 @@
+.singer-detail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  z-index: 10;
+  background: #fff;
+  .title {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    height: 3rem;
+    z-index: 31;
+    align-items: center;
+    color: #fff;
+    i {
+      font-size: 1.4rem;
+      line-height: 3rem;
+      flex-basis: 13%;
+      text-align: center;
+    }
+    .name {
+      font-size: 1.1rem;
+    }
+  }
+  .bac {
+    z-index: 10;
+    position: sticky;
+    top: -17rem;
+    height: 21rem;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: all 0.3s;
+    overflow: hidden;
+    .filter {
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      filter: blur(5px);
+    }
+  }
+  .play-action {
+    position: sticky;
+    z-index: 11;
+    top: 3rem;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    line-height: 3.5rem;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(149, 165, 166, 0.2);
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    i {
+      font-size: 1.4rem;
+      padding: 0 1rem;
+    }
+  }
+  .song {
+    position: relative;
+    top: -2rem;
+  }
+}

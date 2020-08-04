@@ -1,0 +1,75 @@
+.search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: #fff;
+  .search-title {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+
+    .icon-back {
+      color: #7f8c8d;
+      flex-basis: 13%;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+    .ipt {
+      flex: 1;
+      display: flex;
+      margin-right: 0.5rem;
+      border-bottom: 1px solid #7f8c8d;
+      input {
+        flex: 1;
+        outline: none;
+        font-size: 1rem;
+        border: none;
+        padding: 2px;
+        box-sizing: border-box;
+      }
+      i {
+        color: #7f8c8d;
+        flex-basis: 2rem;
+        font-size: 1.4rem;
+        text-align: center;
+      }
+    }
+  }
+  .content {
+    height: auto;
+    overflow: auto;
+    height: 100vh;
+    padding: 3.2rem 10px;
+    box-sizing: border-box;
+    p {
+      margin-bottom: 0.3rem;
+      margin-left: 0.3rem;
+    }
+    .hot {
+      display: flex;
+      flex-wrap: wrap;
+      .hot-item {
+        border: 1px solid rgba(149, 165, 166, 0.3);
+        padding: 0.3rem 0.4rem;
+        border-radius: 6px;
+        margin: 0.3rem;
+        user-select: none;
+        cursor: pointer;
+        &:active {
+          background-color: rgba(149, 165, 166, 0.3);
+        }
+      }
+    }
+    .song {
+      overflow: auto;
+    }
+  }
+}

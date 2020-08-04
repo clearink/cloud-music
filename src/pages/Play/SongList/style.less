@@ -1,0 +1,111 @@
+.song-list {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  .mask {
+    height: 40vh;
+  }
+  .s-list {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 60vh;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    background: #fff;
+    .lst-title {
+      height: 3rem;
+      display: flex;
+      border-bottom: 1px solid rgba(189, 195, 199, 0.4);
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      .tlt-action,
+      .tlt-extra {
+        padding: 0 0.3rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        i {
+          color: #7f8c8d;
+          font-size: 1.3rem;
+          margin-right: 0.5rem;
+        }
+        &:active {
+          background: rgba(149, 165, 166, 0.2);
+        }
+      }
+    }
+    .lst {
+      overflow: auto;
+      height: calc(100% - 3rem);
+      .lst-item {
+        height: 2.5rem;
+        transition: all .5s;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        padding-left: 0.5rem;
+        &:active {
+          background: rgba(149, 165, 166, 0.2);
+        }
+        .icon-playCount {
+          color: #d43c33;
+          font-size: 1.1rem;
+          padding-right: 0.5rem;
+        }
+        .active * { 
+          color: #d43c33 !important;
+        }
+        .s-info {
+          flex: 1;
+          line-height: 2.5rem;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+
+          .s-n {
+            padding-right: 0.3rem;
+          }
+          .s-s {
+            font-size: 0.6rem;
+            color: #7f8c8d;
+          }
+        }
+        .icon-delete {
+          flex-basis: 3rem;
+          text-align: center;
+          color: #7f8c8d;
+        }
+      }
+    }
+  }
+}
+
+.song-list-enter {
+  opacity: 0;
+  transform: translateY(100px);
+  background: rgba(0, 0, 0, 0);
+}
+.song-list-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease, background-color 0.2s 0.2s ease;
+}
+.song-list-enter-done {
+  background: rgba(0, 0, 0, 0.5);
+}
+.song-list-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.song-list-exit-active {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.3s ease;
+}

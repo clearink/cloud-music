@@ -1,0 +1,41 @@
+.singer {
+  padding: 10px 10px 3rem;
+  .nav-list {
+    position: fixed;
+    right: 2vw;
+    list-style: none;
+    text-align: center;
+    user-select: none;
+    .nav-list-item {
+      line-height: 3vh;
+      width: 3vh;
+      cursor: pointer;
+    }
+    .active {
+      color: #d43c33;
+    }
+  }
+  .artist-list {
+    list-style-type: none;
+    li:not(:last-child) {
+      border-bottom: 1px solid rgba(149, 165, 166, 0.3);
+    }
+    .list-item {
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      color: #000;
+      &:active {
+        background: rgba(149, 165, 166, 0.2);
+      }
+      img {
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid rgba(149, 165, 166, 0.3);
+        object-fit: cover;
+        margin-right: 1rem;
+        border-radius: 0.3rem;
+      }
+    }
+  }
+}

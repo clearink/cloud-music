@@ -1,0 +1,229 @@
+.player {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: #2c3e50;
+  z-index: 11;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  .bac {
+    transition: all 1s 0.2s;
+    position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    filter: blur(50px);
+    transform: scale(1.5);
+    z-index: -1;
+    .filter {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+  }
+  .action {
+    display: flex;
+    flex-basis: 8vh;
+    align-items: center;
+    color: #ecf0f1;
+    justify-content: space-around;
+    i {
+      font-size: 1.4rem;
+      &:active {
+        text-shadow: 0px 0px 4px#fff;
+      }
+    }
+  }
+}
+
+.player-title {
+  flex-basis: 3rem;
+  // height: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #fff;
+  i {
+    line-height: 3rem;
+    flex-basis: 13%;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+  .text {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 2rem;
+    & > * {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .s-name {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+    .s-singer {
+      font-size: 0.5rem;
+    }
+  }
+}
+.player-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 65vh;
+  align-items: center;
+  overflow: hidden;
+  .lyric {
+    width: 100%;
+    overflow: auto;
+    text-align: center;
+    padding: 35vh 0;
+    scroll-behavior: smooth;
+    list-style: none;
+    font-size: 1rem;
+    li {
+      color: rgba(255, 255, 255, 0.3);
+      padding: 1rem 2rem;
+    }
+    .active {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+  
+  .record {
+    margin-top: 15vh;
+    position: absolute;
+    .needle {
+      position: absolute;
+      left: 45%;
+      top: -4rem;
+      z-index: 11;
+      height: 7.5rem;
+      width: 5rem;
+      transition: transform 0.3s;
+      transform-origin: 0.8rem 0.8rem;
+      background-image: url("/assets/needle.png");
+    }
+    .needle,
+    .cd {
+      
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .cd {
+      background-image: url("/assets/disc.png");
+      display: flex;
+      width: 15rem;
+      height: 15rem;
+      justify-content: center;
+      align-items: center;
+      transform-origin: center;
+      animation: img-rotate 10s linear infinite;
+      img {
+        border-radius: 50%;
+        width: 10rem;
+        height: 10rem;
+        transition: all 0.2s;
+      }
+    }
+    .cd-pause {
+      animation-play-state: paused;
+    }
+  }
+
+  .needle-pause {
+    transform: rotate(-30deg);
+  }
+}
+.process {
+  display: flex;
+  width: 100vw;
+  color: #ecf0f1;
+  height: 8vh;
+  justify-content: space-around;
+  align-items: center;
+  .p-bar {
+    flex: 1;
+    cursor: pointer;
+    height: 3px;
+    background: #aaa;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .bar-cur {
+      background: #fff;
+      height: 100%;
+    }
+    .bar-btn {
+      position: absolute;
+      border: 8px solid #fff;
+      border-radius: 50%;
+    }
+    .big {
+      transform: scale(1.3);
+      box-sizing: 0 0 4px #fff;
+    }
+  }
+
+  .current,
+  .duration {
+    flex-basis: 5rem;
+    text-align: center;
+  }
+}
+.player-footer {
+  flex-basis: 6vh;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  i {
+    font-size: 1.4rem;
+    &:active {
+      text-shadow: 0px 0px 4px#fff;
+    }
+  }
+  .icon-play,
+  .icon-pause {
+    font-size: 2.5rem;
+  }
+}
+
+@keyframes img-rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.open-player-enter {
+  opacity: 0;
+  transform: translate3d(0, 100px, 0);
+}
+.open-player-enter-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.3s ease;
+}
+.open-player-exit {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.open-player-exit-active {
+  opacity: 0;
+  transform: translate3d(0, 100px, 0);
+  transition: all 0.3s ease;
+}

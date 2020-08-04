@@ -1,0 +1,64 @@
+.player-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid #ecf0f1;
+  align-items: center;
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  z-index: 10;
+
+  .pause {
+    animation-play-state: paused;
+  }
+  img {
+    margin: 0 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid #ecf0f1;
+    overflow: hidden;
+    box-sizing: border-box;
+    transform-origin: center;
+    animation: img-rotate 10s linear infinite;
+  }
+  .iconfont {
+    padding-right: 1rem;
+    flex-basis: 2rem;
+    font-size: 2rem;
+  }
+
+  .s-desc {
+    flex: 1;
+    overflow: hidden;
+    padding-right: 1rem;
+    .s-name {
+      font-size: 1rem;
+    }
+    .s-singer {
+      font-size: 0.6rem;
+    }
+    & > * {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+.bar-enter {
+  bottom: -100%;
+}
+.bar-enter-active {
+  bottom: 0;
+  transition: all 0.3s;
+}
+.bar-exit {
+  bottom: 0;
+}
+.bar-exit-active {
+  bottom: -100%;
+  transition: all 0.3s;
+}
