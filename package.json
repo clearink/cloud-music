@@ -22,7 +22,7 @@
     "react-router-transition": "^2.0.0",
     "react-scripts": "3.2.0",
     "react-transition-group": "^4.3.0",
-    "swiper": "^5.2.1"
+    "swiper": "^6.5.1"
   },
   "scripts": {
     "start": "react-app-rewired start",
